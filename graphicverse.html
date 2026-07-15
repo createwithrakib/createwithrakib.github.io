@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Verse | Brand Identity Case Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            /* 🌲 আপনার সেই চমৎকার সিগনেচার ডার্ক গ্রিন ব্যাকগ্রাউন্ড */
+            background-color: #061110; 
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 🗺️ নেভিগেশন বার */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: rgba(6, 17, 16, 0.85); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(17, 41, 38, 0.4); 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            z-index: 9999;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .back-btn {
+            color: #06b6d4; /* সায়ান অ্যাকসেন্ট */
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            padding: 8px 16px;
+            border-radius: 6px;
+            background-color: rgba(6, 182, 212, 0.05);
+        }
+        .back-btn:hover {
+            background-color: #06b6d4;
+            color: #061110;
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+            transform: translateX(-3px);
+        }
+
+        /* 📱 মেইন কন্টেইনার */
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            padding: 120px 20px 60px 20px;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #06b6d4;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(17, 41, 38, 0.2);
+            border: 1px solid #112926;
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            text-align: left;
+        }
+
+        .meta-label {
+            font-size: 0.8rem;
+            color: #06b6d4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
+
+        .meta-value {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+
+        /* 🖼️ কেস স্টাডি ইমেজ স্ট্যাক */
+        .case-study-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; 
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .artboard-wrapper {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #112926; /* ডার্ক গ্রিন ব্র্যান্ড স্ট্রোক */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            background-color: #030706;
+        }
+
+        .artboard-wrapper:hover {
+            border-color: #06b6d4;
+            transform: scale(1.01);
+        }
+
+        .artboard-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 📌 ফুটার নেভিগেশন */
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(17, 41, 38, 0.4);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 🗺️ নেভিগেশন বার -->
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">
+        RAKIB AHMED
+    </a>
+    <a href="index.html" class="back-btn">
+        <span>←</span> Back to Portfolio
+    </a>
+</nav>
+
+<!-- মেইন কন্টেন্ট -->
+<div class="container">
+    <header>
+        <h1>Graphic Verse</h1>
+        <div class="subtitle">Complete Brand Identity Presentation</div>
+        
+        <div class="project-meta">
+            <div class="meta-item">
+                <div class="meta-label">Project</div>
+                <div class="meta-value">Graphic Verse</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Role</div>
+                <div class="meta-value">Logo & Brand Identity</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Year</div>
+                <div class="meta-value">2026</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- আর্টবোর্ড ১ থেকে ২৫ ক্রমানুসারে লোড হবে -->
+    <div class="case-study-stack">
+        <div id="gallery"></div>
+    </div>
+
+    <footer>
+        <div class="footer-text">© 2026 Rakib Ahmed. All rights reserved.</div>
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </footer>
+</div>
+
+<script>
+    // ১ থেকে ২৫ পর্যন্ত আর্টবোর্ডগুলো ক্রমানুসারে জেনারেট করার স্ক্রিপ্ট
+    const gallery = document.getElementById('gallery');
+    for (let i = 1; i <= 25; i++) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'artboard-wrapper';
+        
+        const img = document.createElement('img');
+        img.className = 'artboard-img';
+        img.src = `Artboard ${i}-100.jpg`;
+        img.alt = `Graphic Verse Case Study - Page ${i}`;
+        img.loading = 'lazy'; 
+        
+        wrapper.appendChild(img);
+        gallery.appendChild(wrapper);
+    }
+</script>
+</body>
+</html>

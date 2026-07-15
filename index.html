@@ -96,91 +96,116 @@
             color: #0b0c10;
         }
 
-        /* Loading Screen Styles (সবগুলো স্টাইল এখন CSS এর ভেতরেই আছে) */
+        /* 🟢 আপনার ব্র্যান্ড কালারের চমৎকার লোডার স্ক্রিন */
         #loader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #0b0c10;
+            /* আপনার ছবির ডার্ক গ্রিন গ্রেডিয়েন্ট কালার */
+            background: linear-gradient(135deg, #1c2e2a 0%, #0d1614 100%);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 99999;
             opacity: 1;
             visibility: visible;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden;
         }
         .loader-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            overflow: hidden;
+            position: relative;
         }
+        
+        /* লোগো স্লাইডিং এরিয়া */
         .logo-slide {
             display: flex;
             gap: 50px;
             transform: translateX(100vw);
-            animation: slideLeft 3.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: slideThrough 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
         .logo-slide img {
-            height: 80px;
+            height: 90px;
             width: auto;
             object-fit: contain;
-            filter: grayscale(100%) brightness(1.5);
-        }
-        .loader-name {
-            margin-top: 40px;
-            font-size: 2rem;
-            color: #66fcf1;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            opacity: 0;
-            animation: fadeInName 1s ease 2.2s forwards;
         }
 
-        /* Animations */
-        @keyframes slideLeft {
+        /* আপনার নাম এবং ট্যাগলাইন এরিয়া */
+        .loader-info {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            animation: showIdentity 1.5s ease 2s forwards;
+        }
+        .loader-name {
+            font-size: 2.8rem;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .loader-tagline {
+            font-size: 1rem;
+            color: #66fcf1; /* আপনার সিগনেচার সায়ান কালার */
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* 🎬 অ্যানিমেশন কিফ্রেমসমূহ */
+        @keyframes slideThrough {
             0% {
                 transform: translateX(100vw);
             }
-            50% {
-                transform: translateX(10vw);
+            45% {
+                transform: translateX(-10vw); /* মাঝখানে একটু ধীর হবে */
             }
             100% {
-                transform: translateX(-150vw);
+                transform: translateX(-180vw); /* বামে স্ক্রিনের বাইরে চলে যাবে */
             }
         }
-        @keyframes fadeInName {
+        @keyframes showIdentity {
             0% {
                 opacity: 0;
-                transform: scale(0.9);
+                transform: translateY(20px);
             }
             100% {
                 opacity: 1;
-                transform: scale(1);
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
 
+<!-- লোডার সেকশন -->
 <div id="loader">
     <div class="loader-content">
+        <!-- প্রথমে লোগোগুলো স্লাইড করবে -->
         <div class="logo-slide">
             <img src="Aur Branding-10.jpg" alt="Logo 1">
             <img src="Artboard 1-100.jpg" alt="Logo 2">
             <img src="Site bari-05.jpg" alt="Logo 3">
             <img src="Freelancer 3-01.jpg" alt="Logo 4">
         </div>
-        <div class="loader-name">Rakib Ahmed</div>
+        <!-- লোগো চলে যাওয়ার পর নাম ও ট্যাগলাইন ভেসে উঠবে -->
+        <div class="loader-info">
+            <div class="loader-name">Rakib Ahmed</div>
+            <div class="loader-tagline">Brand & Logo Designer</div>
+        </div>
     </div>
 </div>
 
+<!-- মূল ওয়েবসাইট কন্টেন্ট -->
 <div class="container">
     <header>
         <h1>Rakib Ahmed</h1>
@@ -222,7 +247,6 @@
 </div>
 
 <script>
-    // পেজ লোড হওয়ার সাথে সাথে এই ফাংশনটি রান করবে
     function hideLoader() {
         var loader = document.getElementById('loader');
         if (loader) {
@@ -231,16 +255,10 @@
         }
     }
 
-    // ব্যাকআপ ৪ সেকেন্ডের টাইমার (যাতে কোনোভাবেই কালো স্ক্রিন আটকে না থাকে)
-    var backupTimer = setTimeout(function() {
+    // লোগো স্লাইড ও নাম সুন্দরভাবে দেখানোর জন্য মোট ৪.৫ সেকেন্ড টাইম দেওয়া হয়েছে
+    setTimeout(function() {
         hideLoader();
-    }, 4000); // ৪ সেকেন্ড পর জোর করে কেটে যাবে
-
-    // আর যদি সবকিছু ৪ সেকেন্ডের আগেই লোড হয়ে যায়, তবে সাথে সাথেই কেটে যাবে
-    window.addEventListener('load', function() {
-        clearTimeout(backupTimer); // ব্যাকআপ টাইমার বন্ধ করবে
-        hideLoader(); // লোডার হাইড করবে
-    });
+    }, 4500); 
 </script>
 </body>
 </html>

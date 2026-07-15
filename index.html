@@ -13,7 +13,6 @@
             scroll-behavior: smooth;
         }
         body {
-            /* 🌲 আপনার সেই আসল প্রথম স্ক্রিনশটের লাক্সারি ডার্ক গ্রিন ব্যাকগ্রাউন্ড */
             background-color: #061110; 
             color: #f1f5f9;
             padding-top: 100px;
@@ -23,7 +22,6 @@
             min-height: 100vh;
         }
         
-        /* 🗺️ নেভিগেশন বার */
         .navbar {
             position: fixed;
             top: 0;
@@ -69,7 +67,7 @@
             padding: 5px 0;
         }
         .nav-item a:hover {
-            color: #06b6d4; /* সায়ান টেক্সট */
+            color: #06b6d4;
         }
         .nav-item a::after {
             content: '';
@@ -86,7 +84,6 @@
             width: 100%;
         }
 
-        /* 📱 মেইন কন্টেইনার */
         .container {
             max-width: 900px;
             width: 100%;
@@ -104,7 +101,7 @@
             letter-spacing: -0.5px;
         }
         .subtitle {
-            color: #06b6d4; /* সায়ান সাবটাইটেল */
+            color: #06b6d4;
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -128,7 +125,6 @@
             padding-bottom: 10px;
         }
         
-        /* 💼 ৩ডি গ্লাস কার্ড */
         .project-link {
             text-decoration: none;
             color: inherit;
@@ -142,16 +138,13 @@
             padding: 28px;
             border-radius: 12px; 
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            
-            /* 🟢 বর্ডারে আপনার ডার্ক পাইন গ্রিন ব্র্যান্ড কালার স্ট্রোক */
             border: 1px solid #112926; 
-            
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
         .project-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 45px rgba(6, 182, 212, 0.15); /* হোভারে সায়ান গ্লো */
-            border-color: #06b6d4; /* হোভারে স্ট্রোক সায়ান হবে */
+            box-shadow: 0 20px 45px rgba(6, 182, 212, 0.15);
+            border-color: #06b6d4;
             background-color: rgba(30, 41, 59, 0.25);
         }
         .project-title {
@@ -173,7 +166,6 @@
             color: #cbd5e1;
         }
 
-        /* 🏷️ Pricing Section */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -188,10 +180,7 @@
             border-radius: 12px;
             text-align: center;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            
-            /* 🟢 বর্ডারে আপনার ডার্ক পাইন গ্রিন ব্র্যান্ড কালার স্ট্রোক */
             border: 1px solid #112926;
-            
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
         .price-card:hover {
@@ -253,7 +242,6 @@
             width: auto;
         }
 
-        /* 🔵 লোডার স্ক্রিন */
         #loader {
             position: fixed;
             top: 0;
@@ -330,7 +318,6 @@
 </head>
 <body>
 
-<!-- লোডার স্ক্রিন -->
 <div id="loader">
     <div class="loader-content">
         <div class="personal-logo-container">
@@ -343,7 +330,6 @@
     </div>
 </div>
 
-<!-- 🗺️ মেইন নেভিগেশন বার -->
 <nav class="navbar">
     <a href="#" class="nav-brand">
         <img src="Personal logo & vcolour -01-Photoroom.png" alt="Logo">
@@ -356,7 +342,6 @@
     </ul>
 </nav>
 
-<!-- মেইন কন্টেন্ট -->
 <div class="container">
     <header id="home">
         <h1>Rakib Ahmed</h1>
@@ -369,26 +354,20 @@
     </header>
 
     <main>
-        <!-- প্রজেক্ট সেকশন -->
         <section id="projects">
             <h2 class="section-title">Selected Projects</h2>
-            
-            <!-- Site Bari প্রজেক্ট কার্ড -->
             <a href="sitebari.html" class="project-link">
                 <div class="project-card">
                     <h3 class="project-title">Site Bari <span>→</span></h3>
                     <p class="project-desc">A comprehensive brand identity designed for Site Bari, crafted with structural precision and elegance. (Click to view full 15-page case study)</p>
                 </div>
             </a>
-
-            <!-- Graphic Verse প্রজেক্ট কার্ড -->
-<a href="graphicverse.html" class="project-link">
-    <div class="project-card">
-        <h3 class="project-title">Graphic Verse <span>→</span></h3>
-        <p class="project-desc">A comprehensive brand identity designed for Graphic Verse, crafted with structural precision, grids, and premium visual assets. (Click to view full 25-page case study)</p>
-    </div>
-</a>
-
+            <a href="graphicverse.html" class="project-link">
+                <div class="project-card">
+                    <h3 class="project-title">Graphic Verse <span>→</span></h3>
+                    <p class="project-desc">A comprehensive brand identity designed for Graphic Verse, crafted with structural precision, grids, and premium visual assets. (Click to view full 25-page case study)</p>
+                </div>
+            </a>
             <a href="runex.html" class="project-link">
                 <div class="project-card">
                     <h3 class="project-title">Runex <span>→</span></h3>
@@ -397,7 +376,6 @@
             </a>
         </section>
 
-        <!-- প্রাইসিং সেকশন -->
         <section id="pricing">
             <h2 class="section-title">Design Packages</h2>
             <div class="pricing-grid">
@@ -410,7 +388,8 @@
                         <li>Basic Color Palette</li>
                         <li>3 Days Delivery</li>
                     </ul>
-                    <a href="mailto:createwithrakib@gmail.com?subject=Inquiry: Starter Package" class="btn">Get Started</a>
+                    <a href="mailto:createwithrakib@gmail.com" class="btn" style="margin-bottom: 10px;">Email Me</a>
+                    <a href="https://wa.me/8801719352427" class="btn">WhatsApp</a>
                 </div>
                 <div class="price-card">
                     <div class="price-title">Full Brand Suite</div>
@@ -421,19 +400,20 @@
                         <li>Brand Style Guideline</li>
                         <li>Social Media Kit</li>
                     </ul>
-                    <a href="mailto:createwithrakib@gmail.com?subject=Inquiry: Full Brand Suite" class="btn">Get Started</a>
+                    <a href="mailto:createwithrakib@gmail.com" class="btn" style="margin-bottom: 10px;">Email Me</a>
+                    <a href="https://wa.me/8801719352427" class="btn">WhatsApp</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- কন্টাক্ট সেকশন -->
     <footer id="contact">
         <h2 class="section-title">Connect With Me</h2>
         <div class="links">
             <a href="https://www.behance.net/rakibahm" target="_blank" class="btn footer-btn">Behance</a>
             <a href="https://dribbble.com/rsrakibzx" target="_blank" class="btn footer-btn">Dribbble</a>
             <a href="mailto:createwithrakib@gmail.com" class="btn footer-btn">Email Me</a>
+            <a href="https://wa.me/8801719352427" class="btn footer-btn">WhatsApp</a>
         </div>
     </footer>
 </div>

@@ -96,21 +96,21 @@
             color: #0b0c10;
         }
 
-        /* 🟢 আপনার ব্র্যান্ডের অরিজিনাল ডার্ক গ্রিন লোডার স্ক্রিন */
+        /* 🟢 ব্র্যান্ড ডার্ক গ্রিন লোডার */
         #loader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #0f221e !important; /* আপনার পাঠানো ছবির ডার্ক গ্রিন কালার */
+            background-color: #0f221e !important;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 999999 !important; /* জেনো সব কিছুর একদম উপরে থাকে */
+            z-index: 999999 !important;
             opacity: 1;
             visibility: visible;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), visibility 1s cubic-bezier(0.25, 1, 0.5, 1);
             overflow: hidden;
         }
         
@@ -122,21 +122,33 @@
             position: relative;
         }
         
-        /* লোগো স্লাইড অ্যানিমেশন */
-        .logo-slide {
+        /* 📺 নিউজ চ্যানেলের মতো নিউজ টিকার কন্টেইনার */
+        .logo-ticker-container {
+            width: 100%;
+            overflow: hidden;
             display: flex;
-            gap: 40px;
-            transform: translateX(100vw);
-            animation: slideLeftAndGone 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            align-items: center;
+            justify-content: flex-start;
+            white-space: nowrap;
+            position: relative;
+        }
+        
+        /* নিউজ স্টাইলের স্মুথ স্ক্রলিং লুপ */
+        .logo-slide {
+            display: inline-flex;
+            gap: 80px; /* লোগোগুলোর মধ্যে সুন্দর ফাঁকা জায়গা */
+            padding-left: 100%; /* একদম ডান দিক থেকে শুরু হবে */
+            animation: newsTicker 12s linear forwards; /* ১২ সেকেন্ড ধরে অত্যন্ত ধীরে বামে স্ক্রোল হবে */
         }
         
         .logo-slide img {
             height: 90px;
             width: auto;
             object-fit: contain;
+            display: inline-block;
         }
 
-        /* আপনার নাম ও ট্যাগলাইন এরিয়া */
+        /* আপনার নাম ও ট্যাগলাইন এরিয়া (প্রথমে লুকিয়ে থাকবে) */
         .loader-info {
             position: absolute;
             display: flex;
@@ -144,9 +156,9 @@
             align-items: center;
             text-align: center;
             opacity: 0;
-            transform: translateY(20px);
-            /* লোগো স্লাইড শেষ হওয়ার পর (১.৮ সেকেন্ড পর) এটি ভেসে উঠবে */
-            animation: fadeInIdentity 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1.8s forwards;
+            transform: translateY(30px);
+            /* লোগোগুলো স্ক্রোল হয়ে যাওয়ার পর (ঠিক ৭ সেকেন্ড পর) এটি স্মুথলি ভেসে উঠবে */
+            animation: fadeInIdentity 1.5s cubic-bezier(0.25, 1, 0.5, 1) 7s forwards;
         }
         
         .loader-name {
@@ -160,29 +172,26 @@
         
         .loader-tagline {
             font-size: 0.95rem;
-            color: #66fcf1; /* সায়ান কালার */
+            color: #66fcf1;
             font-weight: 600;
             letter-spacing: 5px;
             text-transform: uppercase;
         }
 
         /* 🎬 অ্যানিমেশন কিফ্রেমসমূহ */
-        @keyframes slideLeftAndGone {
+        @keyframes newsTicker {
             0% {
-                transform: translateX(100vw); /* ডান দিক দিয়ে স্ক্রিনে ঢুকবে */
-            }
-            40% {
-                transform: translateX(5vw); /* মাঝখানে এসে একটু আস্তে হবে */
+                transform: translateX(0); /* ডান সীমানা থেকে শুরু */
             }
             100% {
-                transform: translateX(-180vw); /* বাম দিক দিয়ে পুরোপুরি স্ক্রিন থেকে বের হয়ে যাবে */
+                transform: translateX(-220%); /* বাম সীমানার বাইরে চলে যাবে */
             }
         }
         
         @keyframes fadeInIdentity {
             0% {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             100% {
                 opacity: 1;
@@ -196,12 +205,14 @@
 <!-- লোডার স্ক্রিন -->
 <div id="loader">
     <div class="loader-content">
-        <!-- লোগোগুলো ডান থেকে এসে বামে চলে যাবে -->
-        <div class="logo-slide">
-            <img src="Aur Branding-10.jpg" alt="Logo 1">
-            <img src="Artboard 1-100.jpg" alt="Logo 2">
-            <img src="Site bari-05.jpg" alt="Logo 3">
-            <img src="Freelancer 3-01.jpg" alt="Logo 4">
+        <!-- নিউজ চ্যানেলের মতো ধীরগতির স্ক্রোলার -->
+        <div class="logo-ticker-container">
+            <div class="logo-slide">
+                <img src="Aur Branding-10.jpg" alt="Logo 1">
+                <img src="Artboard 1-100.jpg" alt="Logo 2">
+                <img src="Site bari-05.jpg" alt="Logo 3">
+                <img src="Freelancer 3-01.jpg" alt="Logo 4">
+            </div>
         </div>
         
         <!-- লোগো চলে যাওয়ার পর নাম ও ট্যাগলাইন আসবে -->
@@ -262,11 +273,11 @@
         }
     }
 
-    // লোগো স্লাইড শেষ হবে ২.৫ সেকেন্ডে, এরপর নাম ও ট্যাগলাইন ভেসে থাকবে ১.৫ সেকেন্ড। 
-    // মোট ৪ সেকেন্ড পর চমৎকারভাবে লোডিং স্ক্রিনটি সরে গিয়ে ওয়েবসাইটটি সামনে আসবে।
+    // লোগো স্ক্রোল হতে ৭ সেকেন্ড সময় নিবে, এরপর নাম ও ট্যাগলাইন ৩ সেকেন্ড দেখাবে।
+    // সর্বমোট ১০ সেকেন্ড পরে লোডার স্ক্রিনটি স্মুথলি চলে যাবে।
     setTimeout(function() {
         hideLoader();
-    }, 4200); 
+    }, 10000); 
 </script>
 </body>
 </html>

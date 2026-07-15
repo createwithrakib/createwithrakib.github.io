@@ -13,8 +13,8 @@
             scroll-behavior: smooth;
         }
         body {
-            /* 🕊️ অত্যন্ত শান্ত কিন্তু প্রিমিয়াম ডার্ক সেজ গ্লো ব্যাকগ্রাউন্ড */
-            background: radial-gradient(circle at center, #0e1e1a 0%, #050a09 100%);
+            /* 🟢 পিওর লাক্সারি ডার্ক ও রিচ ফরেস্ট গ্রিন রেডিয়াল গ্রেডিয়েন্ট */
+            background: radial-gradient(circle at center, #051c16 0%, #030706 100%);
             background-attachment: fixed;
             color: #e2e8f0;
             padding-top: 100px;
@@ -24,17 +24,17 @@
             min-height: 100vh;
         }
         
-        /* 🗺️ লাক্সারি গ্লাস-মরফিজম নেভিগেশন বার */
+        /* 🗺️ প্রিমিয়াম গ্লাস-মরফিজম নেভিগেশন বার */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 80px;
-            background-color: rgba(5, 10, 9, 0.7); 
+            background-color: rgba(3, 7, 6, 0.75); 
             backdrop-filter: blur(20px); 
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(52, 211, 153, 0.15); /* সফট সেজ গ্রিন সূক্ষ্ম বর্ডার */
+            border-bottom: 1px solid rgba(94, 234, 212, 0.12); /* অত্যন্ত হালকা মিন্ট বর্ডার */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -59,7 +59,7 @@
             gap: 30px;
         }
         .nav-item a {
-            color: #cbd5e1;
+            color: #94a3b8;
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 600;
@@ -70,7 +70,7 @@
             padding: 5px 0;
         }
         .nav-item a:hover {
-            color: #34d399; /* সফট প্রিমিয়াম সেজ গ্রিন */
+            color: #5eead4; /* আল্ট্রা-প্রিমিয়াম মিন্ট গ্রিন */
         }
         .nav-item a::after {
             content: '';
@@ -79,7 +79,7 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background-color: #34d399;
+            background-color: #5eead4;
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -105,7 +105,7 @@
             letter-spacing: -0.5px;
         }
         .subtitle {
-            color: #34d399; /* সফট প্রিমিয়াম সেজ গ্রিন */
+            color: #5eead4; 
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -125,11 +125,11 @@
             font-size: 1.8rem;
             margin-top: 80px;
             margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             padding-bottom: 10px;
         }
         
-        /* 💼 গ্লাস-মরফিজম প্রজেক্ট কার্ড - যা ফিরিয়ে আনবে সেই থ্রিডি লাক্সারি ডেপথ */
+        /* 💼 ৩ডি থ্রি-ডাইমেনশনাল গ্লাস কার্ড */
         .project-link {
             text-decoration: none;
             color: inherit;
@@ -137,33 +137,38 @@
             margin-bottom: 20px;
         }
         .project-card {
-            background-color: rgba(14, 30, 26, 0.45); /* সফট ডার্ক সেজ গ্লাস */
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 25px;
+            background-color: rgba(5, 28, 22, 0.35); /* রিচ সেমি-ট্রান্সপারেন্ট গ্রিন */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 28px;
             border-radius: 12px; 
-            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-            border: 1px solid rgba(52, 211, 153, 0.1);
-            box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.45);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05); /* ক্লিন সিলভার বর্ডার */
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
         }
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(52, 211, 153, 0.15);
-            border-color: rgba(52, 211, 153, 0.45);
-            background-color: rgba(14, 30, 26, 0.6);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(94, 234, 212, 0.1); /* সফট মিন্ট রিফ্লেক্টিভ শ্যাডো */
+            border-color: rgba(94, 234, 212, 0.35);
+            background-color: rgba(5, 28, 22, 0.55);
         }
         .project-title {
-            color: #34d399;
-            font-size: 1.25rem;
+            color: #ffffff; /* পিওর হোয়াইট আরও বেশি প্রফেশনাল */
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            transition: color 0.3s ease;
+        }
+        .project-card:hover .project-title {
+            color: #5eead4; /* হোভারে টাইটেল মিন্ট গ্রিন হবে */
         }
         .project-desc {
             font-size: 0.95rem;
             line-height: 1.6;
-            color: #cbd5e1;
+            color: #94a3b8;
         }
 
         /* 🏷️ Pricing Section */
@@ -174,20 +179,20 @@
             margin-top: 20px;
         }
         .price-card {
-            background-color: rgba(14, 30, 26, 0.45);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(52, 211, 153, 0.15);
+            background-color: rgba(5, 28, 22, 0.35);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 12px;
             text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.45);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
         }
         .price-card:hover {
-            transform: translateY(-5px);
-            border-color: #34d399;
-            box-shadow: 0 15px 35px rgba(52, 211, 153, 0.15);
+            transform: translateY(-6px);
+            border-color: #5eead4;
+            box-shadow: 0 20px 45px rgba(94, 234, 212, 0.1);
         }
         .price-title {
             color: #ffffff;
@@ -197,7 +202,7 @@
             text-transform: uppercase;
         }
         .price-amount {
-            color: #34d399;
+            color: #5eead4;
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 20px;
@@ -210,11 +215,11 @@
         .price-features li {
             font-size: 0.9rem;
             margin-bottom: 10px;
-            color: #cbd5e1;
+            color: #94a3b8;
         }
         .price-features li::before {
             content: '✓ ';
-            color: #34d399;
+            color: #5eead4;
             font-weight: bold;
         }
 
@@ -226,8 +231,8 @@
         .btn {
             display: inline-block;
             padding: 12px 24px;
-            border: 2px solid #34d399;
-            color: #34d399;
+            border: 2px solid #5eead4;
+            color: #5eead4;
             text-decoration: none;
             font-weight: 600;
             border-radius: 4px;
@@ -236,8 +241,8 @@
             width: 100%;
         }
         .btn:hover {
-            background-color: #34d399;
-            color: #050a09;
+            background-color: #5eead4;
+            color: #030706;
         }
         .footer-btn {
             width: auto;
@@ -250,7 +255,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: radial-gradient(circle at center, #0e1e1a 0%, #050a09 100%) !important;
+            background: radial-gradient(circle at center, #051c16 0%, #030706 100%) !important;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -302,7 +307,7 @@
         }
         .loader-tagline {
             font-size: 0.95rem;
-            color: #34d399;
+            color: #5eead4;
             font-weight: 600;
             letter-spacing: 5px;
             text-transform: uppercase;

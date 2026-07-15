@@ -38,24 +38,16 @@
             z-index: 9999;
         }
 
-        /* বাম পাশের লোগো এবং ব্র্যান্ড নাম */
+        /* বাম পাশের লোগো কন্টেইনার (নাম মুছে ফেলা হয়েছে) */
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 12px;
             text-decoration: none;
         }
         .nav-brand img {
-            height: 45px;
+            height: 50px; /* লোগোটি যেন ক্লিয়ার দেখা যায় তাই সাইজ সামান্য বাড়ানো হলো */
             width: auto;
             object-fit: contain;
-        }
-        .nav-brand span {
-            color: #ffffff;
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
         }
 
         /* ডান পাশের মেনু অপশনসমূহ */
@@ -306,7 +298,6 @@
 <!-- লোডার স্ক্রিন -->
 <div id="loader">
     <div class="loader-content">
-        <!-- 🎯 আপনার পার্সোনাল পিএনজি লোগো ফাইল নাম আপডেট করা হলো -->
         <div class="personal-logo-container">
             <img src="Personal logo & vcolour -01-Photoroom.png" alt="Rakib Ahmed Personal Logo">
         </div>
@@ -320,9 +311,8 @@
 <!-- 🗺️ মেইন নেভিগেশন বার -->
 <nav class="navbar">
     <a href="#" class="nav-brand">
-        <!-- 🎯 হেডারেও পিএনজি লোগো ফাইল নাম আপডেট করা হলো -->
+        <!-- এখানে লোগোর পাশ থেকে text মুছে শুধু লোগো ইমেজটি রাখা হয়েছে -->
         <img src="Personal logo & vcolour -01-Photoroom.png" alt="Logo">
-        <span>Rakib</span>
     </a>
     <ul class="nav-menu">
         <li class="nav-item"><a href="#">Home</a></li>

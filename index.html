@@ -96,24 +96,24 @@
             color: #0b0c10;
         }
 
-        /* 🟢 আপনার ব্র্যান্ড কালারের চমৎকার লোডার স্ক্রিন */
+        /* 🟢 আপনার ব্র্যান্ডের অরিজিনাল ডার্ক গ্রিন লোডার স্ক্রিন */
         #loader {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            /* আপনার ছবির ডার্ক গ্রিন গ্রেডিয়েন্ট কালার */
-            background: linear-gradient(135deg, #1c2e2a 0%, #0d1614 100%);
+            width: 100vw;
+            height: 100vh;
+            background-color: #0f221e !important; /* আপনার পাঠানো ছবির ডার্ক গ্রিন কালার */
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 99999;
+            z-index: 999999 !important; /* জেনো সব কিছুর একদম উপরে থাকে */
             opacity: 1;
             visibility: visible;
-            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: opacity 0.8s ease, visibility 0.8s ease;
             overflow: hidden;
         }
+        
         .loader-content {
             display: flex;
             flex-direction: column;
@@ -122,20 +122,21 @@
             position: relative;
         }
         
-        /* লোগো স্লাইডিং এরিয়া */
+        /* লোগো স্লাইড অ্যানিমেশন */
         .logo-slide {
             display: flex;
-            gap: 50px;
+            gap: 40px;
             transform: translateX(100vw);
-            animation: slideThrough 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: slideLeftAndGone 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
+        
         .logo-slide img {
             height: 90px;
             width: auto;
             object-fit: contain;
         }
 
-        /* আপনার নাম এবং ট্যাগলাইন এরিয়া */
+        /* আপনার নাম ও ট্যাগলাইন এরিয়া */
         .loader-info {
             position: absolute;
             display: flex;
@@ -143,37 +144,42 @@
             align-items: center;
             text-align: center;
             opacity: 0;
-            animation: showIdentity 1.5s ease 2s forwards;
+            transform: translateY(20px);
+            /* লোগো স্লাইড শেষ হওয়ার পর (১.৮ সেকেন্ড পর) এটি ভেসে উঠবে */
+            animation: fadeInIdentity 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1.8s forwards;
         }
+        
         .loader-name {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: #ffffff;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
+        
         .loader-tagline {
-            font-size: 1rem;
-            color: #66fcf1; /* আপনার সিগনেচার সায়ান কালার */
+            font-size: 0.95rem;
+            color: #66fcf1; /* সায়ান কালার */
             font-weight: 600;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
         }
 
         /* 🎬 অ্যানিমেশন কিফ্রেমসমূহ */
-        @keyframes slideThrough {
+        @keyframes slideLeftAndGone {
             0% {
-                transform: translateX(100vw);
+                transform: translateX(100vw); /* ডান দিক দিয়ে স্ক্রিনে ঢুকবে */
             }
-            45% {
-                transform: translateX(-10vw); /* মাঝখানে একটু ধীর হবে */
+            40% {
+                transform: translateX(5vw); /* মাঝখানে এসে একটু আস্তে হবে */
             }
             100% {
-                transform: translateX(-180vw); /* বামে স্ক্রিনের বাইরে চলে যাবে */
+                transform: translateX(-180vw); /* বাম দিক দিয়ে পুরোপুরি স্ক্রিন থেকে বের হয়ে যাবে */
             }
         }
-        @keyframes showIdentity {
+        
+        @keyframes fadeInIdentity {
             0% {
                 opacity: 0;
                 transform: translateY(20px);
@@ -187,17 +193,18 @@
 </head>
 <body>
 
-<!-- লোডার সেকশন -->
+<!-- লোডার স্ক্রিন -->
 <div id="loader">
     <div class="loader-content">
-        <!-- প্রথমে লোগোগুলো স্লাইড করবে -->
+        <!-- লোগোগুলো ডান থেকে এসে বামে চলে যাবে -->
         <div class="logo-slide">
             <img src="Aur Branding-10.jpg" alt="Logo 1">
             <img src="Artboard 1-100.jpg" alt="Logo 2">
             <img src="Site bari-05.jpg" alt="Logo 3">
             <img src="Freelancer 3-01.jpg" alt="Logo 4">
         </div>
-        <!-- লোগো চলে যাওয়ার পর নাম ও ট্যাগলাইন ভেসে উঠবে -->
+        
+        <!-- লোগো চলে যাওয়ার পর নাম ও ট্যাগলাইন আসবে -->
         <div class="loader-info">
             <div class="loader-name">Rakib Ahmed</div>
             <div class="loader-tagline">Brand & Logo Designer</div>
@@ -255,10 +262,11 @@
         }
     }
 
-    // লোগো স্লাইড ও নাম সুন্দরভাবে দেখানোর জন্য মোট ৪.৫ সেকেন্ড টাইম দেওয়া হয়েছে
+    // লোগো স্লাইড শেষ হবে ২.৫ সেকেন্ডে, এরপর নাম ও ট্যাগলাইন ভেসে থাকবে ১.৫ সেকেন্ড। 
+    // মোট ৪ সেকেন্ড পর চমৎকারভাবে লোডিং স্ক্রিনটি সরে গিয়ে ওয়েবসাইটটি সামনে আসবে।
     setTimeout(function() {
         hideLoader();
-    }, 4500); 
+    }, 4200); 
 </script>
 </body>
 </html>

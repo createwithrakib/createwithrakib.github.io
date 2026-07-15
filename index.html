@@ -13,8 +13,9 @@
             scroll-behavior: smooth;
         }
         body {
-            /* 🔵 পিওর রিচ ডার্ক ব্যাকগ্রাউন্ড - কোনো ঘোলাটে বা নোংরা ভাব নেই */
-            background-color: #030712;
+            /* 🌲 আপনার সিগনেচার পাইন গ্রিনের একটি ডার্ক লাক্সারি ভাইব */
+            background-color: #030706; /* আল্ট্রা ডার্ক বেস */
+            background-image: radial-gradient(circle at top left, rgba(17, 41, 38, 0.4) 0%, transparent 45%);
             color: #f1f5f9;
             padding-top: 100px;
             display: flex;
@@ -23,17 +24,17 @@
             min-height: 100vh;
         }
         
-        /* 🗺️ আল্ট্রা-শার্প গ্লাস-মরফিজম নেভিগেশন বার */
+        /* 🗺️ নেভিগেশন বার */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 80px;
-            background-color: rgba(3, 7, 18, 0.8); 
+            background-color: rgba(3, 7, 6, 0.85); 
             backdrop-filter: blur(20px); 
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(6, 182, 212, 0.15); /* শার্প সায়ান বর্ডার */
+            border-bottom: 1px solid rgba(17, 41, 38, 0.4); /* আপনার ব্র্যান্ডের ডার্ক গ্রিন বর্ডার */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -69,7 +70,7 @@
             padding: 5px 0;
         }
         .nav-item a:hover {
-            color: #06b6d4; /* শার্প মেটালিক সায়ান */
+            color: #2dd4bf; /* প্রিমিয়াম মিন্ট গ্রিন অ্যাকসেন্ট */
         }
         .nav-item a::after {
             content: '';
@@ -78,7 +79,7 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background-color: #06b6d4;
+            background-color: #2dd4bf;
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -104,7 +105,7 @@
             letter-spacing: -0.5px;
         }
         .subtitle {
-            color: #06b6d4; 
+            color: #2dd4bf; /* আপনার ব্র্যান্ডের রিফ্রেশিং মিন্ট গ্রিন */
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -128,7 +129,7 @@
             padding-bottom: 10px;
         }
         
-        /* 💼 কাঁচের মতো স্বচ্ছ ৩ডি গ্লাস কার্ড - কোনো ডালনেস থাকবে না */
+        /* 💼 কাঁচের মতো স্বচ্ছ ৩ডি গ্লাস কার্ড - পাইন গ্রিন বর্ডার সহ */
         .project-link {
             text-decoration: none;
             color: inherit;
@@ -136,20 +137,20 @@
             margin-bottom: 20px;
         }
         .project-card {
-            background-color: rgba(30, 41, 59, 0.3); /* রিয়েল ট্রান্সপারেন্ট গ্লাস */
+            background-color: rgba(17, 41, 38, 0.15); /* ব্র্যান্ডের পাইন গ্রিন গ্লাস ইফেক্ট */
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             padding: 28px;
             border-radius: 12px; 
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(6, 182, 212, 0.12); /* সূক্ষ্ম সায়ান বর্ডার */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(17, 41, 38, 0.4); /* আপনার ডার্ক পাইন গ্রিন বর্ডার */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
         .project-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 45px rgba(6, 182, 212, 0.15); /* নিয়ন সায়ান রিফ্লেক্টিভ শ্যাডো */
-            border-color: rgba(6, 182, 212, 0.45);
-            background-color: rgba(30, 41, 59, 0.5);
+            box-shadow: 0 20px 45px rgba(45, 212, 191, 0.08); /* সফট মিন্ট গ্রিন গ্লো */
+            border-color: rgba(45, 212, 191, 0.45); /* হোভারে বর্ডার কালার ব্রাইট হবে */
+            background-color: rgba(17, 41, 38, 0.25);
         }
         .project-title {
             color: #ffffff;
@@ -162,7 +163,7 @@
             transition: color 0.3s ease;
         }
         .project-card:hover .project-title {
-            color: #06b6d4;
+            color: #2dd4bf;
         }
         .project-desc {
             font-size: 0.95rem;
@@ -178,20 +179,20 @@
             margin-top: 20px;
         }
         .price-card {
-            background-color: rgba(30, 41, 59, 0.3);
+            background-color: rgba(17, 41, 38, 0.15);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(6, 182, 212, 0.12);
+            border: 1px solid rgba(17, 41, 38, 0.4);
             padding: 30px;
             border-radius: 12px;
             text-align: center;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
         .price-card:hover {
             transform: translateY(-6px);
-            border-color: #06b6d4;
-            box-shadow: 0 20px 45px rgba(6, 182, 212, 0.15);
+            border-color: #2dd4bf;
+            box-shadow: 0 20px 45px rgba(45, 212, 191, 0.08);
         }
         .price-title {
             color: #ffffff;
@@ -201,7 +202,7 @@
             text-transform: uppercase;
         }
         .price-amount {
-            color: #06b6d4;
+            color: #2dd4bf;
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 20px;
@@ -218,7 +219,7 @@
         }
         .price-features li::before {
             content: '✓ ';
-            color: #06b6d4;
+            color: #2dd4bf;
             font-weight: bold;
         }
 
@@ -230,8 +231,8 @@
         .btn {
             display: inline-block;
             padding: 12px 24px;
-            border: 2px solid #06b6d4;
-            color: #06b6d4;
+            border: 2px solid #2dd4bf;
+            color: #2dd4bf;
             text-decoration: none;
             font-weight: 600;
             border-radius: 4px;
@@ -240,21 +241,21 @@
             width: 100%;
         }
         .btn:hover {
-            background-color: #06b6d4;
-            color: #030712;
+            background-color: #2dd4bf;
+            color: #030706;
         }
         .footer-btn {
             width: auto;
         }
 
-        /* 🔵 ডার্ক লোডার স্ক্রিন */
+        /* 🟢 ডার্ক গ্রিন লোডার স্ক্রিন */
         #loader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #030712 !important;
+            background-color: #030706 !important;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -306,7 +307,7 @@
         }
         .loader-tagline {
             font-size: 0.95rem;
-            color: #06b6d4;
+            color: #2dd4bf;
             font-weight: 600;
             letter-spacing: 5px;
             text-transform: uppercase;

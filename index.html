@@ -166,20 +166,25 @@
     </footer>
 </div>
 <script>
-        // Start script as soon as DOM is fully loaded
-        document.addEventListener("DOMContentLoaded", function() {
-            // Add loading class to body to prevent scrolling
-            document.body.classList.add("loading");
-            
-            // Wait for animations to complete, then fade out the loader
-            setTimeout(function() {
-                const loader = document.getElementById("loader");
-                if (loader) {
-                    loader.style.opacity = "0";
-                    loader.style.visibility = "hidden";
-                }
+        // পেজ লোড হওয়ার সাথে সাথে এই ফাংশনটি রান করবে
+        function hideLoader() {
+            var loader = document.getElementById('loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
                 document.body.classList.remove("loading");
-            }, 3500); // 3.5 seconds
+            }
+        }
+
+        // ব্যাকআপ ৩ সেকেন্ডের টাইমার (যাতে কোনোভাবেই কালো স্ক্রিন আটকে না থাকে)
+        var backupTimer = setTimeout(function() {
+            hideLoader();
+        }, 3000); // ৩ সেকেন্ড পর জোর করে কেটে যাবে
+
+        // আর যদি সবকিছু ৩ সেকেন্ডের আগেই লোড হয়ে যায়, তবে সাথে সাথেই কেটে যাবে
+        window.addEventListener('load', function() {
+            clearTimeout(backupTimer); // ব্যাকআপ টাইমার বন্ধ করবে
+            hideLoader(); // লোডার হাইড করবে
         });
     </script>
 </body>

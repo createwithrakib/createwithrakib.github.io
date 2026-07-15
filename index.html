@@ -96,7 +96,7 @@
             color: #0b0c10;
         }
 
-        /* 🟢 ব্র্যান্ড ডার্ক গ্রিন লোডার */
+        /* 🟢 ব্র্যান্ড ডার্ক গ্রিন লোডার স্ক্রিন */
         #loader {
             position: fixed;
             top: 0;
@@ -116,86 +116,90 @@
         
         .loader-content {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             width: 100%;
+            height: 100%;
             position: relative;
         }
         
-        /* 📺 নিউজ চ্যানেলের মতো নিউজ টিকার কন্টেইনার */
+        /* 📺 লোগোর ডিসপ্লে এরিয়া (স্ক্রিনের একদম মাঝখানে থাকবে) */
         .logo-ticker-container {
             width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             overflow: hidden;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            white-space: nowrap;
-            position: relative;
         }
         
-        /* নিউজ স্টাইলের স্মুথ স্ক্রলিং লুপ */
+        /* লুপ অ্যানিমেশন - একটার পর একটা লোগো আসবে */
         .logo-slide {
-            display: inline-flex;
-            gap: 80px; /* লোগোগুলোর মধ্যে সুন্দর ফাঁকা জায়গা */
-            padding-left: 100%; /* একদম ডান দিক থেকে শুরু হবে */
-            animation: newsTicker 12s linear forwards; /* ১২ সেকেন্ড ধরে অত্যন্ত ধীরে বামে স্ক্রোল হবে */
+            display: flex;
+            gap: 120px; /* লোগোগুলোর মাঝের গ্যাপ আরেকটু বাড়ালাম */
+            padding-left: 100%; /* স্ক্রিনের বাইরে ডান দিক থেকে শুরু হবে */
+            animation: newsTicker 10s linear forwards; /* ১০ সেকেন্ড ধরে খুব স্মুথলি বামে যাবে */
         }
         
         .logo-slide img {
-            height: 90px;
+            height: 140px; /* লোগোগুলোকে স্পষ্ট দেখানোর জন্য সাইজ বাড়িয়ে ১৪০ পিক্সেল করলাম */
             width: auto;
+            max-width: 320px; /* লোগোর উইডথ লিমিট বাড়ালাম যেন চ্যাপ্টা না লাগে */
             object-fit: contain;
-            display: inline-block;
+            display: block;
+            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.3)); /* লোগোকে ব্যাকগ্রাউন্ড থেকে আলাদা করতে শ্যাডো */
         }
 
-        /* আপনার নাম ও ট্যাগলাইন এরিয়া (প্রথমে লুকিয়ে থাকবে) */
+        /* আপনার নাম ও ট্যাগলাইন এরিয়া (মাঝখানে আসবে) */
         .loader-info {
             position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             opacity: 0;
-            transform: translateY(30px);
-            /* লোগোগুলো স্ক্রোল হয়ে যাওয়ার পর (ঠিক ৭ সেকেন্ড পর) এটি স্মুথলি ভেসে উঠবে */
-            animation: fadeInIdentity 1.5s cubic-bezier(0.25, 1, 0.5, 1) 7s forwards;
+            /* লোগো চলে যাওয়ার পর (ঠিক ৫.৫ সেকেন্ড পর) এটি ভেসে উঠবে */
+            animation: fadeInIdentity 1.5s cubic-bezier(0.25, 1, 0.5, 1) 5.5s forwards;
         }
         
         .loader-name {
-            font-size: 2.5rem;
+            font-size: 3rem; /* নামটিকে আরও একটু বোল্ড ও প্রিমিয়াম করলাম */
             color: #ffffff;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
         
         .loader-tagline {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             color: #66fcf1;
             font-weight: 600;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             text-transform: uppercase;
         }
 
         /* 🎬 অ্যানিমেশন কিফ্রেমসমূহ */
         @keyframes newsTicker {
             0% {
-                transform: translateX(0); /* ডান সীমানা থেকে শুরু */
+                transform: translateX(0);
             }
             100% {
-                transform: translateX(-220%); /* বাম সীমানার বাইরে চলে যাবে */
+                transform: translateX(-240%); /* সম্পূর্ণ লুপ শেষ করে বামে চলে যাবে */
             }
         }
         
         @keyframes fadeInIdentity {
             0% {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(-30%); /* নিচ থেকে হালকা উপরে উঠবে */
             }
             100% {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(-50%); /* একদম মাঝখানে থিতু হবে */
             }
         }
     </style>
@@ -205,7 +209,7 @@
 <!-- লোডার স্ক্রিন -->
 <div id="loader">
     <div class="loader-content">
-        <!-- নিউজ চ্যানেলের মতো ধীরগতির স্ক্রোলার -->
+        <!-- স্ক্রিনের মাঝখান দিয়ে নিউজ স্টাইলে লোগোগুলো চলে যাবে -->
         <div class="logo-ticker-container">
             <div class="logo-slide">
                 <img src="Aur Branding-10.jpg" alt="Logo 1">
@@ -215,7 +219,7 @@
             </div>
         </div>
         
-        <!-- লোগো চলে যাওয়ার পর নাম ও ট্যাগলাইন আসবে -->
+        <!-- লোগোগুলো বামে চলে গেলে নাম ও ট্যাগলাইন ভেসে উঠবে -->
         <div class="loader-info">
             <div class="loader-name">Rakib Ahmed</div>
             <div class="loader-tagline">Brand & Logo Designer</div>
@@ -273,11 +277,11 @@
         }
     }
 
-    // লোগো স্ক্রোল হতে ৭ সেকেন্ড সময় নিবে, এরপর নাম ও ট্যাগলাইন ৩ সেকেন্ড দেখাবে।
-    // সর্বমোট ১০ সেকেন্ড পরে লোডার স্ক্রিনটি স্মুথলি চলে যাবে।
+    // লোগো স্ক্রোল হবে ৫.৫ সেকেন্ড ধরে, নাম ও ট্যাগলাইন থাকবে ৩ সেকেন্ড।
+    // সর্বমোট ৮.৫ সেকেন্ড পরে লোডার স্ক্রিনটি ফেইড-আউট হয়ে আপনার মূল সাইটটি নিয়ে আসবে।
     setTimeout(function() {
         hideLoader();
-    }, 10000); 
+    }, 8500); 
 </script>
 </body>
 </html>

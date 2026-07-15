@@ -96,9 +96,95 @@
             color: #0b0c10;
         }
     </style>
+    /* Loading Screen Styles */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0b0c10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            overflow: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .loader-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        .logo-slide {
+            display: flex;
+            gap: 50px;
+            transform: translateX(100vw);
+            animation: slideLeft 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        .logo-slide img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(1.5);
+            transition: filter 0.3s;
+        }
+        .logo-slide img:hover {
+            filter: grayscale(0%) brightness(1);
+        }
+        .loader-name {
+            margin-top: 40px;
+            font-size: 2rem;
+            color: #66fcf1;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeInName 1s ease 1.8s forwards;
+        }
+        /* Hide scrollbar when loader is active */
+        body.loading {
+            overflow: hidden;
+        }
+
+        /* Animations */
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(100vw);
+            }
+            50% {
+                transform: translateX(-10%);
+            }
+            100% {
+                transform: translateX(-150%);
+            }
+        }
+        @keyframes fadeInName {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 </head>
 <body>
-
+<div id="loader">
+    <div class="loader-content">
+        <div class="logo-slide">
+            <img src="Aur Branding-10.jpg" alt="Logo 1">
+            <img src="Artboard 1-100.jpg" alt="Logo 2">
+            <img src="Site bari-05.jpg" alt="Logo 3">
+            <img src="Freelancer 3-01.jpg" alt="Logo 4">
+        </div>
+        <div class="loader-name">Rakib Ahmed</div>
+    </div>
+</div>
 <div class="container">
     <header>
         <h1>Rakib Ahmed</h1>
@@ -138,6 +224,22 @@
         </div>
     </footer>
 </div>
-
+<script>
+        // Start script as soon as DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // Add loading class to body to prevent scrolling
+            document.body.classList.add("loading");
+            
+            // Wait for animations to complete, then fade out the loader
+            setTimeout(function() {
+                const loader = document.getElementById("loader");
+                if (loader) {
+                    loader.style.opacity = "0";
+                    loader.style.visibility = "hidden";
+                }
+                document.body.classList.remove("loading");
+            }, 3500); // 3.5 seconds
+        });
+    </script>
 </body>
 </html>

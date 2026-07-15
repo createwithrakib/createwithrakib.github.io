@@ -96,7 +96,7 @@
             color: #0b0c10;
         }
     </style>
-    /* Loading Screen Styles */
+    /* লোডিং স্ক্রিনের স্টাইল */
         #loader {
             position: fixed;
             top: 0;
@@ -105,72 +105,13 @@
             height: 100%;
             background-color: #0b0c10;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            overflow: hidden;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-        .loader-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 600px;
-        }
-        .logo-slide {
-            display: flex;
-            gap: 50px;
-            transform: translateX(100vw);
-            animation: slideLeft 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-        .logo-slide img {
-            height: 80px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(100%) brightness(1.5);
-            transition: filter 0.3s;
-        }
-        .logo-slide img:hover {
-            filter: grayscale(0%) brightness(1);
-        }
-        .loader-name {
-            margin-top: 40px;
-            font-size: 2rem;
-            color: #66fcf1;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            opacity: 0;
-            transform: scale(0.9);
-            animation: fadeInName 1s ease 1.8s forwards;
-        }
-        /* Hide scrollbar when loader is active */
-        body.loading {
-            overflow: hidden;
-        }
-
-        /* Animations */
-        @keyframes slideLeft {
-            0% {
-                transform: translateX(100vw);
-            }
-            50% {
-                transform: translateX(-10%);
-            }
-            100% {
-                transform: translateX(-150%);
-            }
-        }
-        @keyframes fadeInName {
-            0% {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
         }
 </head>
 <body>

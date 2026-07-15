@@ -5,68 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Bari | Brand Identity Case Study</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
         body { background-color: #061110; color: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
-        
-        .navbar { position: fixed; top: 0; width: 100%; height: 80px; background-color: rgba(6, 17, 16, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(17, 41, 38, 0.4); display: flex; justify-content: space-between; align-items: center; padding: 0 10%; z-index: 9999; }
-        .back-btn { color: #06b6d4; text-decoration: none; font-weight: 600; border: 1px solid rgba(6, 182, 212, 0.3); padding: 8px 16px; border-radius: 6px; }
-        
-        .container { max-width: 1100px; width: 100%; padding: 150px 20px 60px 20px; text-align: center; }
-        h1 { font-size: 2.8rem; margin-bottom: 10px; }
-        .subtitle { color: #06b6d4; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; margin-bottom: 40px; }
-        
-        .info-box { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; padding: 20px; background: rgba(17, 41, 38, 0.3); border: 1px solid #112926; border-radius: 8px; }
-        .info-item { text-align: center; }
-        .info-label { font-size: 0.75rem; color: #06b6d4; text-transform: uppercase; margin-bottom: 5px; }
-        .info-value { font-weight: 600; }
 
-        .case-study-stack { display: flex; flex-direction: column; gap: 25px; }
-        
-        /* এখানে আসল ম্যাজিক: Graphic Verse এর মতো হভার ইফেক্ট */
-        .artboard-wrapper { 
-            width: 100%; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            border: 1px solid #112926; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-        }
-        .artboard-wrapper:hover { 
-            transform: translateY(-10px); /* মাউস নিলে ওপরের দিকে উঠবে */
-            border-color: #06b6d4; 
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-        }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background-color: rgba(6, 17, 16, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(17, 41, 38, 0.4); display: flex; justify-content: space-between; align-items: center; padding: 0 10%; z-index: 9999; }
+        .nav-brand { text-decoration: none; color: #ffffff; font-weight: 700; letter-spacing: 1px; }
+        .back-btn { color: #06b6d4; text-decoration: none; font-size: 0.95rem; font-weight: 600; border: 1px solid rgba(6, 182, 212, 0.3); padding: 8px 16px; border-radius: 6px; background-color: rgba(6, 182, 212, 0.05); transition: all 0.3s ease; }
+        .back-btn:hover { background-color: #06b6d4; color: #061110; }
+
+        .container { max-width: 1100px; width: 100%; padding: 120px 20px 60px 20px; text-align: center; }
+        h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 10px; }
+        .subtitle { color: #06b6d4; font-size: 1rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; margin-bottom: 20px; }
+
+        .project-meta { display: flex; justify-content: center; gap: 40px; margin-top: 20px; padding: 15px; background-color: rgba(17, 41, 38, 0.2); border: 1px solid #112926; border-radius: 8px; }
+        .meta-item { text-align: left; }
+        .meta-label { font-size: 0.8rem; color: #06b6d4; text-transform: uppercase; margin-bottom: 3px; }
+        .meta-value { font-size: 0.95rem; color: #cbd5e1; font-weight: 600; }
+
+        .case-study-stack { display: flex; flex-direction: column; gap: 25px; margin-top: 40px; width: 100%; }
+
+        /* Graphic Verse এর মতো হভার ইফেক্ট */
+        .artboard-wrapper { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #112926; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: transform 0.3s ease, border-color 0.3s ease; background-color: #030706; }
+        .artboard-wrapper:hover { border-color: #06b6d4; transform: scale(1.01); }
         .artboard-img { width: 100%; height: auto; display: block; }
+
+        footer { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(17, 41, 38, 0.4); width: 100%; display: flex; justify-content: space-between; align-items: center; }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" style="color:#fff; text-decoration:none; font-weight:700;">RAKIB AHMED</a>
+        <a href="index.html" class="nav-brand">RAKIB AHMED</a>
         <a href="index.html" class="back-btn">← Back to Portfolio</a>
     </nav>
-    
     <div class="container">
-        <h1>Site Bari</h1>
-        <div class="subtitle">Complete Brand Identity Presentation</div>
-        
-        <div class="info-box">
-            <div class="info-item">
-                <div class="info-label">Project</div>
-                <div class="info-value">Site Bari</div>
+        <header>
+            <h1>Site Bari</h1>
+            <div class="subtitle">Complete Brand Identity Presentation</div>
+            <div class="project-meta">
+                <div class="meta-item"><div class="meta-label">Project</div><div class="meta-value">Site Bari</div></div>
+                <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">Logo & Brand Identity</div></div>
+                <div class="meta-item"><div class="meta-label">Year</div><div class="meta-value">2026</div></div>
             </div>
-            <div class="info-item">
-                <div class="info-label">Role</div>
-                <div class="info-value">Logo & Brand Identity</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Year</div>
-                <div class="info-value">2026</div>
-            </div>
-        </div>
-
+        </header>
         <div class="case-study-stack" id="gallery"></div>
+        <footer><div style="color:#94a3b8; font-size:0.9rem;">© 2026 Rakib Ahmed. All rights reserved.</div></footer>
     </div>
-
     <script>
         const gallery = document.getElementById('gallery');
         for (let i = 1; i <= 15; i++) {

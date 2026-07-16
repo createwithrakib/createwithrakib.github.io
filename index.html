@@ -23,7 +23,7 @@
             min-height: 100vh;
         }
 
-        /* --- লোগো মারকিউ স্টাইল (যা আপনার রিকোয়েস্ট অনুযায়ী যোগ করা হয়েছে) --- */
+        /* --- লোগো মারকিউ স্টাইল --- */
         .marquee-wrapper {
             position: fixed;
             top: 150px;
@@ -81,7 +81,6 @@
                 display: none;
             }
         }
-        /* ----------------------------------------------------------------- */
 
         .navbar {
             position: fixed;
@@ -429,7 +428,7 @@
 </head>
 <body>
 
-<!-- লোগো মারকিউ এলিমেন্টস (ডান ও বাম পাশের সাইডবার স্ক্রলিং) -->
+<!-- লোগো মারকিউ এলিমেন্টস -->
 <div class="marquee-wrapper left-marquee">
     <div class="marquee down">
         <img src="Runex-01.jpg" alt="Logo">
@@ -437,7 +436,6 @@
         <img src="Freelancer [Recovered]-01.jpg" alt="Logo">
         <img src="Freelancer 3-01.jpg" alt="Logo">
         <img src="Artboard 1-100.jpg" alt="Logo">
-        <!-- ইনফিনিট স্ক্রলিং লুপের জন্য ডুপ্লিকেট ইমেজ -->
         <img src="Runex-01.jpg" alt="Logo">
         <img src="Site bari 3-07.jpg" alt="Logo">
         <img src="Freelancer [Recovered]-01.jpg" alt="Logo">
@@ -453,7 +451,6 @@
         <img src="Site bari-11.jpg" alt="Logo">
         <img src="Artboard 24-100.jpg" alt="Logo">
         <img src="Runex-05.jpg" alt="Logo">
-        <!-- ইনফিনিট স্ক্রলিং লুপের জন্য ডুপ্লিকেট ইমেজ -->
         <img src="Baraka Guide line -20.jpg" alt="Logo">
         <img src="Aur Branding-14.jpg" alt="Logo">
         <img src="Site bari-11.jpg" alt="Logo">
@@ -504,7 +501,6 @@
     </header>
 
     <main>
-        <!-- এবাউট সেকশন -->
         <section id="about">
             <h2 class="section-title">About Me</h2>
             <div class="bio">
@@ -514,7 +510,6 @@
             </div>
         </section>
 
-        <!-- প্রসেস সেকশন -->
         <section id="process">
             <h2 class="section-title">Design Process</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
@@ -537,7 +532,6 @@
             </div>
         </section>
 
-        <!-- প্রজেক্ট সেকশন -->
         <section id="projects">
             <h2 class="section-title">Selected Projects</h2>
             <a href="sitebari.html" class="project-link">
@@ -560,7 +554,6 @@
             </a>
         </section>
 
-        <!-- প্রাইসিং সেকশন -->
         <section id="pricing">
             <h2 class="section-title">Design Packages</h2>
             <div class="pricing-grid">
@@ -589,7 +582,6 @@
             </div>
         </section>
 
-        <!-- এফএকিউ সেকশন -->
         <section id="faq">
             <h2 class="section-title">Common Questions</h2>
             <div class="faq-item">
@@ -607,7 +599,6 @@
         </section>
     </main>
 
-    <!-- ফুটার এবং কন্টাক্ট লিংকস -->
     <footer id="contact">
         <h2 class="section-title">Connect With Me</h2>
         <div class="links">
@@ -619,7 +610,6 @@
     </footer>
 </div>
 
-<!-- লোডার হাইড করার স্ক্রিপ্ট -->
 <script>
     function hideLoader() {
         var loader = document.getElementById('loader');
@@ -628,7 +618,6 @@
             loader.style.visibility = 'hidden';
         }
     }
-    // ৩ সেকেন্ড পর লোডার স্ক্রিন চলে যাবে
     setTimeout(function() {
         hideLoader();
     }, 3000); 

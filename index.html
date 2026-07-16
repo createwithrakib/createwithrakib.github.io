@@ -22,6 +22,42 @@
             min-height: 100vh;
         }
         
+        /* মারকিউ স্টাইল শুরু */
+        .marquee-wrapper {
+            position: fixed;
+            top: 120px;
+            height: 70vh;
+            width: 150px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            z-index: 1;
+        }
+        .left-marquee { left: 5%; }
+        .right-marquee { right: 5%; }
+        .marquee {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            animation: scroll 20s linear infinite;
+        }
+        .marquee img {
+            width: 120px;
+            filter: grayscale(100%) brightness(1000%);
+            opacity: 0.3;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+        .marquee img:hover { opacity: 0.8; filter: grayscale(0%) brightness(1000%); transform: scale(1.05); }
+        .down { animation-direction: normal; }
+        .up { animation-direction: reverse; }
+        @keyframes scroll {
+            from { transform: translateY(0); }
+            to { transform: translateY(-50%); }
+        }
+        @media (max-width: 1300px) { .marquee-wrapper { display: none; } }
+        /* মারকিউ স্টাইল শেষ */
+        
         .navbar {
             position: fixed;
             top: 0;
@@ -88,6 +124,8 @@
             max-width: 900px;
             width: 100%;
             padding: 40px 20px;
+            position: relative;
+            z-index: 2;
         }
         header {
             margin-bottom: 60px;
@@ -334,6 +372,29 @@
     </style>
 </head>
 <body>
+
+<!-- মারকিউ কন্টেইনার যোগ করা হয়েছে -->
+<div class="marquee-wrapper left-marquee">
+    <div class="marquee down">
+        <img src="Runex-01.jpg" alt="Logo">
+        <img src="Site bari 3-07.jpg" alt="Logo">
+        <img src="Freelancer [Recovered]-01.jpg" alt="Logo">
+        <img src="Freelancer 3-01.jpg" alt="Logo">
+        <img src="Artboard 1-100.jpg" alt="Logo">
+        <img src="Runex-01.jpg" alt="Logo">
+    </div>
+</div>
+
+<div class="marquee-wrapper right-marquee">
+    <div class="marquee up">
+        <img src="Baraka Guide line -20.jpg" alt="Logo">
+        <img src="Aur Branding-14.jpg" alt="Logo">
+        <img src="Site bari-11.jpg" alt="Logo">
+        <img src="Artboard 24-100.jpg" alt="Logo">
+        <img src="Runex-05.jpg" alt="Logo">
+        <img src="Baraka Guide line -20.jpg" alt="Logo">
+    </div>
+</div>
 
 <div id="loader">
     <div class="loader-content">

@@ -22,6 +22,17 @@
             min-height: 100vh;
         }
         
+        /* নতুন লোগো অ্যানিমেশন স্টাইল */
+        .logo-sidebar { position: fixed; top: 0; width: 12%; height: 100vh; overflow: hidden; pointer-events: none; z-index: 0; opacity: 0.2; }
+        .sidebar-left { left: 0; }
+        .sidebar-right { right: 0; }
+        .track { display: flex; flex-direction: column; gap: 20px; padding: 20px; }
+        .track img { width: 100%; height: auto; border-radius: 5px; }
+        .track-down { animation: scrollDown 40s linear infinite; }
+        .track-up { animation: scrollUp 40s linear infinite; }
+        @keyframes scrollDown { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
+        @keyframes scrollUp { from { transform: translateY(100%); } to { transform: translateY(-100%); } }
+
         .navbar {
             position: fixed;
             top: 0;
@@ -88,6 +99,8 @@
             max-width: 900px;
             width: 100%;
             padding: 40px 20px;
+            position: relative;
+            z-index: 1;
         }
         header {
             margin-bottom: 60px;
@@ -334,6 +347,26 @@
     </style>
 </head>
 <body>
+
+<!-- লোগো ট্র্যাকিং কলাম -->
+<div class="logo-sidebar sidebar-left">
+    <div class="track track-down">
+        <img src="Runex-01.jpg" alt="Logo">
+        <img src="Site bari 3-07.jpg" alt="Logo">
+        <img src="Freelancer [Recovered]-01.jpg" alt="Logo">
+        <img src="Freelancer 3-01.jpg" alt="Logo">
+    </div>
+</div>
+<div class="logo-sidebar sidebar-right">
+    <div class="track track-up">
+        <img src="Artboard 1-100.jpg" alt="Logo">
+        <img src="Baraka Guide line -20.jpg" alt="Logo">
+        <img src="Aur Branding-14.jpg" alt="Logo">
+        <img src="Site bari-11.jpg" alt="Logo">
+        <img src="Artboard 24-100.jpg" alt="Logo">
+        <img src="Runex-05.jpg" alt="Logo">
+    </div>
+</div>
 
 <div id="loader">
     <div class="loader-content">
